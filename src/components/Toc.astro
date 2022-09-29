@@ -1,0 +1,31 @@
+---
+export interface Props {
+	mainFile: string;
+}
+const { mainFile } = Astro.props;
+const file = await Astro.glob(mainFile.toString);
+---
+<div class="left"
+ >
+<slot />
+</div>
+
+<style>
+.column {
+  float: left;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+
+    </style>
+
+
+
+

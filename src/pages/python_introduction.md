@@ -1,0 +1,3 @@
+---
+layout: ../layout/Slide.astro
+---

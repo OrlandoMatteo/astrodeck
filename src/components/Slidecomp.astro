@@ -1,0 +1,47 @@
+
+---
+export interface Props {
+	pageNumber: string;
+}
+const { nextPage } = Astro.props;
+
+---
+
+<script is:inline>
+
+function myhref(web) {
+    var end=web.toString().padStart(2,0)
+    var url = window.location.href.split('/');
+    url[url.length - 1] = end
+    var newURL = url.join('/')
+    window.location.href = newURL
+}
+
+</script>
+<div class="right"
+onclick={"myhref("+nextPage+")"} >
+<slot />
+</div>
+
+<style>
+.slide-content{
+    width:80vw;
+    height:100vh;
+    margin:auto;
+    }
+.column {
+  float: left;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+    </style>
+
+
+

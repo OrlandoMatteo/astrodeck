@@ -1,0 +1,21 @@
+
+---
+import '../style.css'
+import {myhref} from '../functions.js'
+export interface Props {
+	pageNumber: string;
+}
+const { pageNumber } = Astro.props;
+
+function myhref(web) {
+    url = window.location.href.split('/');
+    url[url.lenght - 1] = web
+    href = url.join('/')
+    window.location.href = url
+}
+
+
+---
+<div onclick={"myhref("+frontmatter.pageNumber+")"} >
+<slot />
+<div>
